@@ -59,3 +59,16 @@
 ## Deploy hints
 
 - Containerize and deploy via Render/Heroku/Vercel+Railway; set envs; add persistent volumes for storage or use S3; add HTTPS and proper TURN for WebRTC.
+
+## Smoke Test Summary
+
+- Date: Current local run
+- Tool: Playwright
+- Result: 4 passed
+  - frontend loads
+  - backend health OK (GET /api/health)
+  - upload and list works at /healthvault
+  - signalling connects at /signalling
+- Validated locally at:
+  - Frontend: http://localhost:3000
+  - Backend: http://localhost:8000/api/health
