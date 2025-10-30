@@ -1,0 +1,53 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: pgpass
+      POSTGRES_DB: healthsaathi_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  mongo:
+    image: mongo:5
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodata:/data/db
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  backend:
+    build: ./backend
+    env_file:
+      - ./.env.local
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - mongo
+      - redis
+    volumes:
+      - ./backend:/app
+      - ./storage:/app/storage
+
+  frontend:
+    build: ./healthcare-main
+    env_file:
+      - ./.env.local
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    volumes:
+      - ./healthcare-main:/app
+
+volumes:
+  pgdata:
+  mongodata:

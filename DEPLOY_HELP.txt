@@ -1,0 +1,35 @@
+
+Detected project summary:
+- package.json present: True
+- index.html present: False
+- Next.js style detected: True
+- build/ dist folders found: build=False, dist=False
+- public/ src/ folders: public=True, src=False
+
+What I did for you (without changing code):
+1) Created a `vercel.json` file in the repository root (inside the unzipped folder) that you can add & push to GitHub.
+2) `vercel.json` content is tailored to the detected project type and will help Vercel route requests to `index.html` or use proper builder.
+
+How to deploy *without modifying code*:
+Option A — Quick (recommended):
+- Push the `vercel.json` file to your GitHub repo root (same place as package.json or index.html).
+- In Vercel, create a new project -> Import from GitHub -> select your repo.
+- Vercel will use `vercel.json`. If you see a Root Directory option in the import screen, set it to the subfolder that contains package.json or index.html if not at repo root.
+- Click Deploy.
+
+Option B — If you can't push:
+- In Vercel dashboard, when importing the repo, set:
+  * Root Directory = the folder inside the repo that contains index.html or package.json (example: `frontend`)
+  * Build Command = `npm run build` (if package.json has build script) or leave blank for static
+  * Output Directory = `build` (CRA) or `dist` (Vite) or leave blank if static
+- Deploy.
+
+If Vercel still gives 404:
+- Ensure the Root Directory is correct.
+- Check Deployment logs in Vercel for "build" step errors.
+- Share the deployment logs here and I will read them and tell exact fix.
+
+I saved the suggested vercel.json in the unzipped folder at:
+/mnt/data/healthcare-main/vercel.json
+
+You can download it, add to your repo root, and push. Good luck for hackathon — batao agar mai file ko zip karke wapas de doon?
