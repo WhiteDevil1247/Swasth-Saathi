@@ -1,4 +1,4 @@
-# HealthSaathi Monorepo (Frontend + Backend + Infra)
+# SwasthSaathi Monorepo (Frontend + Backend + Infra)
 
 ## Quick Start (Docker recommended)
 
@@ -32,7 +32,7 @@
 - Telehealth: `SIGNALING_SERVER_URL`, `TURN_URL`
 - ML: `TF_SERVING_URL`
 
-## Acceptance Validation
+## Acceptance Validation (SwasthSaathi)
 
 - Frontend loads at :3000
 - Backend health at :8000/api/health

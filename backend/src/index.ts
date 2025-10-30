@@ -20,7 +20,7 @@ app.use(express.json());
 
 // Health
 app.get('/api/health', (_req, res) => {
-  res.json({ ok: true, service: 'healthsaathi-backend' });
+  res.json({ ok: true, service: 'swasthsaathi-backend' });
 });
 
 // Auth (mock OTP/JWT)
@@ -50,9 +50,10 @@ fs.mkdirSync(uploadRoot, { recursive: true });
 const upload = multer({ dest: uploadRoot, limits: { fileSize: 10 * 1024 * 1024 } });
 
 app.post('/api/upload', upload.single('file'), (req, res) => {
-  if (!req.file) return res.status(400).json({ error: 'No file uploaded' });
+  const file = (req as any).file as { filename: string; originalname?: string } | undefined;
+  if (!file) return res.status(400).json({ error: 'No file uploaded' });
   // In a real app, persist metadata in DB; for demo, list from FS
-  res.json({ id: req.file.filename, originalName: req.file.originalname });
+  res.json({ id: file.filename, originalName: file.originalname });
 });
 
 app.get('/api/files', (_req, res) => {

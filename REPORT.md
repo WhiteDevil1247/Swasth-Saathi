@@ -1,4 +1,4 @@
-# HealthSaathi Repair Report (Short)
+# SwasthSaathi Repair Report (Short)
 
 ## Root Causes
 - Repo contained only a Next.js frontend (tutorial code). No backend/mobile/infra.
