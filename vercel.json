@@ -2,8 +2,11 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
+      "src": "healthcare-main/package.json",
       "use": "@vercel/next"
     }
-  ]
+  ],
+  "env": {
+    "SENTRY_SKIP_UPLOAD": "1"
+  }
 }

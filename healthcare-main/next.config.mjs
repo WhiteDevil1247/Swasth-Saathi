@@ -2,7 +2,9 @@ import { withSentryConfig } from "@sentry/nextjs";
 /** @type {import('next').NextConfig} */
 const nextConfig = {};
 
-export default withSentryConfig(nextConfig, {
+const enableSentry = !process.env.SENTRY_SKIP_UPLOAD;
+
+export default enableSentry ? withSentryConfig(nextConfig, {
   // For all available options, see:
   // https://github.com/getsentry/sentry-webpack-plugin#options
 
@@ -35,4 +37,4 @@ export default withSentryConfig(nextConfig, {
   // https://docs.sentry.io/product/crons/
   // https://vercel.com/docs/cron-jobs
   automaticVercelMonitors: true,
-});
+}) : nextConfig;

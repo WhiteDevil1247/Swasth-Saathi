@@ -91,9 +91,11 @@ export const AppointmentForm = ({
           );
         }
       } else {
+        const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
         const appointmentToUpdate = {
           userId,
           appointmentId: appointment?.$id!,
+          timeZone,
           appointment: {
             primaryPhysician: values.primaryPhysician,
             schedule: new Date(values.schedule),
