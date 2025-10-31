@@ -1,6 +1,6 @@
 # SwasthSaathi
 
-## Quick Start (Docker recommended)
+## Quick Start
 
 - Copy env: `cp .env.local.example .env.local` and fill placeholders.
 - Start: `docker compose up --build`
