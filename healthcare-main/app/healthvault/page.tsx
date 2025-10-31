@@ -49,13 +49,13 @@ export default function HealthVaultPage() {
         <label className="text-14-medium mr-3" htmlFor="hv-file">Upload file</label>
         <input id="hv-file" aria-label="Upload file" type="file" onChange={onUpload} disabled={loading} />
       </div>
-      {error && <p className="text-red-400 mt-4">{error}</p>}
+      {error && <p className="mt-4 text-red-400">{error}</p>}
       <div className="mt-6">
-        <button className="shad-gray-btn px-4 py-2 rounded" onClick={refresh} disabled={loading}>Refresh</button>
+        <button className="px-4 py-2 rounded shad-gray-btn" onClick={refresh} disabled={loading}>Refresh</button>
       </div>
       <ul className="mt-6 space-y-2">
         {files.map((f) => (
-          <li key={f.id} className="border border-dark-400 p-3 rounded">{f.originalName || f.id}</li>
+          <li key={f.id} className="p-3 border border-dark-400 rounded">{f.originalName || f.id}</li>
         ))}
       </ul>
     </div>

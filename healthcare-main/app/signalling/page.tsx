@@ -27,9 +27,9 @@ export default function SignallingDemoPage() {
       <h1 className="header">Signalling Demo</h1>
       <p className="mt-2">WS URL: {wsUrl}</p>
       <div className="mt-4 space-x-3">
-        <button className="shad-gray-btn px-4 py-2 rounded" disabled={!connected} onClick={sendPing}>Send Ping</button>
+        <button className="px-4 py-2 rounded shad-gray-btn" disabled={!connected} onClick={sendPing}>Send Ping</button>
       </div>
-      <div className="mt-6 border border-dark-400 rounded p-3 h-64 overflow-auto">
+      <div className="mt-6 h-64 overflow-auto rounded border border-dark-400 p-3">
         {log.map((l, i)=> (<div key={i} className="text-14-regular">{l}</div>))}
       </div>
     </div>

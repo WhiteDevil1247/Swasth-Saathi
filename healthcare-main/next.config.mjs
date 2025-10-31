@@ -2,7 +2,7 @@ import { withSentryConfig } from "@sentry/nextjs";
 /** @type {import('next').NextConfig} */
 const nextConfig = {};
 
-const enableSentry = !process.env.SENTRY_SKIP_UPLOAD;
+const enableSentry = !!process.env.SENTRY_AUTH_TOKEN && !process.env.SENTRY_SKIP_UPLOAD;
 
 export default enableSentry ? withSentryConfig(nextConfig, {
   // For all available options, see:
