@@ -51,11 +51,11 @@ export default function HealthVaultPage() {
       </div>
       {error && <p className="mt-4 text-red-400">{error}</p>}
       <div className="mt-6">
-        <button className="px-4 py-2 rounded shad-gray-btn" onClick={refresh} disabled={loading}>Refresh</button>
+        <button className="shad-gray-btn rounded px-4 py-2" onClick={refresh} disabled={loading}>Refresh</button>
       </div>
       <ul className="mt-6 space-y-2">
         {files.map((f) => (
-          <li key={f.id} className="p-3 border border-dark-400 rounded">{f.originalName || f.id}</li>
+          <li key={f.id} className="rounded border border-dark-400 p-3">{f.originalName || f.id}</li>
         ))}
       </ul>
     </div>
