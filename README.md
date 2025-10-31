@@ -1,4 +1,4 @@
-# SwasthSaathi Monorepo (Frontend + Backend + Infra)
+# SwasthSaathi
 
 ## Quick Start (Docker recommended)
 
