@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HealthSaathi — Empowering Every Ability</title>
+    <meta name="description" content="Inclusive, AI-powered healthcare platform: HealthVault, AI Companion, Telehealth, Emergency, NGO Hub and more." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Glowing cursor elements -->
+    <div class="cursor-glow" id="cursor-glow"></div>
+    <div class="cursor-follow" id="cursor-follow"></div>
+
+    <!-- React via CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- App code -->
+    <script src="./config.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js" integrity="sha512-Ot8m8M2f5b7cO+zD2y8S3/5Tflf2y+ee8S0d8lW3Z0qg0OZrCw0pQJ8nV5wG0lq3o1t0m7mA4l7D6dQeBq7K0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/babel" data-presets="env,react" src="./app.js"></script>
+  </body>
+</html>
