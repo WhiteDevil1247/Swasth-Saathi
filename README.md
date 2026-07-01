@@ -69,6 +69,4 @@
   - backend health OK (GET /api/health)
   - upload and list works at /healthvault
   - signalling connects at /signalling
-- Validated locally at:
-  - Frontend: http://localhost:3000
-  - Backend: http://localhost:8000/api/health
+
