@@ -40,10 +40,7 @@
 - WebSocket connects at `/signalling`
 - AI mock at POST `/api/ai/infer` returns sample
 
-## Tests
 
-- Install dev deps in `healthcare-main`: `npm i`
-- Run smoke tests: `npm run test:e2e` (service must be up)
 
 ## Troubleshooting
 
